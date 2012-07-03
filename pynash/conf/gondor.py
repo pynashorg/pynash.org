@@ -1,7 +1,7 @@
 import os
 import urlparse
 
-from .settings import *
+from .base import *
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
