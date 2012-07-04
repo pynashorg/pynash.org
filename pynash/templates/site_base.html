@@ -4,6 +4,10 @@
 {% load i18n %}
 {% load static %}
 
+{% block extra_style %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/docs.css" %}">
+{% endblock %}
+
 {% block extra_head_base %}
     {% block extra_head %}{% endblock %}
 {% endblock %}
