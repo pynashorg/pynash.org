@@ -1,0 +1,12 @@
+key: WUQLZ9M1UKR
+vcs: git
+framework: django
+requirements_file: requirements.txt
+on_deploy:
+     - manage.py syncdb --noinput
+     - manage.py collectstatic --noinput
+static_urls:
+    - /site_media:
+        root: site_media/
+wsgi:
+    entry_point: pynash.wsgi:application
