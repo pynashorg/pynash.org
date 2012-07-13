@@ -98,7 +98,6 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "django.core.context_processors.request",
     "django.contrib.messages.context_processors.messages",
     "pinax_utils.context_processors.settings",
-    "account.context_processors.account",
 ]
 
 
@@ -129,15 +128,14 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     
     # theme
-    "pinax_theme_bootstrap_account",
     "pinax_theme_bootstrap",
     "django_forms_bootstrap",
     
     # external
-    "account",
     "timezones",
     "metron",
-
+    "social_auth",
+    
     # project
 ]
 
@@ -170,22 +168,16 @@ LOGGING = {
     }
 }
 
+GITHUB_APP_ID = os.environ.get("GITHUB_APP_ID", "")
+GITHUB_API_SECRET = os.environ.get("GITHUB_API_SECRET", "")
+
+AUTHENTICATION_BACKENDS = (
+    "social_auth.backends.contrib.github.GithubBackend",
+)
+
 FIXTURE_DIRS = [
     os.path.join(PROJECT_ROOT, "fixtures"),
 ]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-
-ACCOUNT_OPEN_SIGNUP = True
-ACCOUNT_USE_OPENID = False
-ACCOUNT_REQUIRED_EMAIL = False
-ACCOUNT_EMAIL_VERIFICATION = False
-ACCOUNT_EMAIL_AUTHENTICATION = False
-ACCOUNT_UNIQUE_EMAIL = EMAIL_CONFIRMATION_UNIQUE_EMAIL = False
-
-LOGIN_URL = "/account/login/" # @@@ any way this can be a url name?
-LOGIN_REDIRECT_URLNAME = "home"
-LOGOUT_REDIRECT_URLNAME = "home"
-
-EMAIL_CONFIRMATION_DAYS = 2
 EMAIL_DEBUG = DEBUG
