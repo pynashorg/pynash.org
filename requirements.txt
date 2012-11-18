@@ -3,10 +3,12 @@
 
 Django==1.4.2
 pinax-theme-bootstrap==2.2.1
+pinax-theme-bootstrap-account==1.0b2
+django-user-accounts==1.0b7
 django-forms-bootstrap==2.0.3.post1
 metron==1.0
-django-timezones==0.2
-pytz==2012h
+pinax-utils==1.0b1.dev3
+
 django-social-auth==0.7.10
 
 gondor==1.1.5

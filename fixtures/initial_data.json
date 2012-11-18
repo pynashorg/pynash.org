@@ -4,7 +4,7 @@
         "model": "sites.site", 
         "fields": {
             "domain": "localhost:8000", 
-            "name": "pynash [localhost]"
+            "name": "pynash.org [localhost]"
         }
     },
     {
@@ -12,15 +12,7 @@
         "model": "sites.site", 
         "fields": {
             "domain": "pynash.org", 
-            "name": "pynash"
-        }
-    },
-    {
-        "pk": 3, 
-        "model": "sites.site", 
-        "fields": {
-            "domain": "pynash.org", 
-            "name": "pynash"
+            "name": "pynash.org"
         }
     }
 ]

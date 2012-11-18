@@ -1,11 +1,13 @@
 {% extends "theme_base.html" %}
 
 {% load metron_tags %}
+{% load staticfiles %}
 {% load i18n %}
-{% load static %}
 
-{% block extra_style %}
-    <link rel="stylesheet" type="text/css" href="{% static "css/docs.css" %}">
+{% block style_base %}
+    <link href="{% static "pinax/css/theme.css" %}" rel="stylesheet">
+    <link href="{% static "css/site.css" %}" rel="stylesheet">
+    {% block extra_style %}{% endblock %}
 {% endblock %}
 
 {% block extra_head_base %}
